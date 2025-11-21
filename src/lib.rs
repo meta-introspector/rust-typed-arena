@@ -492,7 +492,7 @@ impl<T> Arena<T> {
     /// *x = 2;
     /// ```
     #[inline]
-    pub fn iter_mut(&mut self) -> IterMut<T> {
+    pub fn iter_mut(&mut self) -> IterMut<'_, T> {
         let chunks = self.chunks.get_mut();
         let position = if !chunks.rest.is_empty() {
             let index = 0;
